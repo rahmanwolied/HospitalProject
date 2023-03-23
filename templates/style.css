@@ -1,0 +1,17 @@
+.brand{
+    background: #cbb09c !important;
+}
+.brand-text{
+    color: #2c77ad !important;
+    position: relative;
+}
+
+.brand-logo{
+    position: relative;
+    margin-left: 10px;
+}
+
+.page-footer{
+    background: #2c77ad !important;
+    max-width: 100%;
+}

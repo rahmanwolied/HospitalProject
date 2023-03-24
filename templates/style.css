@@ -2,11 +2,14 @@ body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 .brand{
-    background: #cbb09c !important;
+    background: #2c77ad !important;
 }
 .brand-text{
     color: #2c77ad !important;
@@ -25,9 +28,17 @@ body{
 }
 
 .login-card{
-    width: 400px;
+    width: 400px; 
 }
 .login-button{
     margin: 0px !important;
     color: #2c77ad !important;
+}
+
+form{
+    margin-top: 50px !important;
+}
+
+.login-span{
+    margin-top: 20px;
 }

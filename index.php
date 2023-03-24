@@ -6,7 +6,7 @@
     <section class="white container grey-text">
         <h4 class="center">Login</h4>
         <form class="white" action="login.php" method="POST">
-            <label>Your Email</label>
+            <label>Your Emai</label>
             <input type="text" name="email">
             <label>Your Password</label>
             <input type="password" name="password">

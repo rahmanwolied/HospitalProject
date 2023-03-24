@@ -1,3 +1,10 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
 .brand{
     background: #cbb09c !important;
 }
@@ -7,11 +14,20 @@
 }
 
 .brand-logo{
-    position: relative;
     margin-left: 10px;
 }
 
 .page-footer{
     background: #2c77ad !important;
-    max-width: 100%;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+
+.login-card{
+    width: 400px;
+}
+.login-button{
+    margin: 0px !important;
+    color: #2c77ad !important;
 }

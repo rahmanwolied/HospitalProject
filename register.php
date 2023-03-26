@@ -1,3 +1,27 @@
+<?php
+    $fname = $lname = $email = $username = $pass = $passconfirm = "";
+    $errors = array('fname' => '', 'lname' => '', 'email' => '', 'username' => '', 'pass' => '', 'passconfirm' => '');
+
+    if (isset($_POST['submit'])){
+
+        if (empty($_POST['fname']) || empty($_POST['lname']) || 
+        empty($_POST['email']) || empty($_POST['username']) || empty($_POST['pass']) || empty($_POST['passconfirm'])){
+            echo "Please fill all the fields";
+        }
+
+        else{
+            $fname = $_POST['fname'];
+            $lname = $_POST['lname'];
+            $email = $_POST['email'];
+            $username = $_POST['username'];
+            $pass = $_POST['pass'];
+            $passconfirm = $_POST['passconfirm'];
+        }
+
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,38 +39,40 @@
             <div class="card white center">
                 <div class="card-content">
                     <span class="card-title grey-text">Register</span>
-                    <form class = "col s12" action="admin_login.php" method="POST">
+                    <form class = "col s12" action="register.php" method="POST">
                         <div class="form-names">
 
                             <div class="input-field">
-                                <input type="text" name="fname">
-                                <label for="fname">First Name</label>
+                                <input type="text" name="fname" placeholder="First Name" autocomplete="off" value="<?php echo htmlspecialchars($fname) ?>">
                             </div>
 
                             <div class="input-field">
-                                <input type="text" name="lname">
-                                <label for="lname">Last Name</label>
+                                <input type="text" name="lname" placeholder="Last Name" autocomplete="off" value="<?php echo htmlspecialchars($lname) ?>">
                             </div>
+                        </div>
 
-                        </div>
                         <div class="input-field">
-                            <input type="email" name="email" placeholder="Email" autocomplete="off" class="validate">
-                            <label for="email" class="">Email</label>
+                            <input type="email" name="email" placeholder="Email" value="<?php echo htmlspecialchars($email) ?>" autocomplete="off" class="validate">
                         </div>
+
                         <div class="input-field">
-                            <input type="password" name="pass">
-                            <label for="pass">Password</label>
+                            <input type="text" name="username" id="username" placeholder="Username" value="<?php echo htmlspecialchars($username) ?>" autocomplete="off" class="validate">
                         </div>
+
                         <div class="input-field">
-                            <input type="password" name="passconfirm">
-                            <label for="passconfirm">Confirm Password</label>
+                            <input type="password" name="pass" id="password" placeholder="Pasword" autocomplete="off">
                         </div>
+
+                        <div class="input-field">
+                            <input type="password" name="passconfirm" placeholder="Confirm Password" autocomplete="off">
+                        </div>
+
                         <div class="center">
                             <input style="margin-top: 20px;"type="submit" name="submit" value="Register" class="btn brand z-depth-0">
                         </div>
 
                         <div class="grey-text center account-have" style="padding-top: 24px;">
-                            Already have an account?<a class="blue-text" href="index.php">  Sign in</a>
+                            Already have an account?<a class="blue-text" href="index.php"> Sign in</a>
                         </div>
 
                     </div>

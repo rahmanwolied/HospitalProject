@@ -21,6 +21,10 @@
                             <input style="margin-top: 20px;"type="submit" name="submit" value="Login" class="btn brand z-depth-0">
                         </div>
                         <span class="center"> <a style="font-size: 12px; margin-top: 10px; display: inline-block; margin-bottom: 50px;" class="grey-text" href="#">Forgot Password?</a></span>
+                        <div class= "grey-text">
+                            <span class="center"> New user? <a style="font-size: 12px; margin-top: 10px; display: inline-block; margin-bottom: 50px;" class="blue-text" href="register.php">Create account</a></span>
+                        </div>
+
                     </div>
                 </div>
             </div>

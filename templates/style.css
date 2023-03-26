@@ -43,6 +43,20 @@ body {
     transform: translate(-50%, -50%);
     
 }
+
+.account-have{
+    font-size: 12px; 
+    margin-top: 10px; 
+    display: block; 
+    padding: 30px;
+}
+
+.form-names{
+    display: flex !important;
+    justify-content: space-between;
+    column-gap: 10px;
+}
+
 .login-button{
     margin: 0px !important;
     color: #2c77ad !important;

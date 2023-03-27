@@ -1,16 +1,4 @@
-<?php
-    $host = 'localhost';
-    $username = 'wolied';
-    $password = '@Wolied123';
-    $dbname = 'pharm_air';
-    $conn = mysqli_connect($host, $username, $password, $dbname); 
-
-    if(!$conn){
-        echo 'Connection error: ' . mysqli_connect_error();
-    }
-
-?>
-
+<?php include("config/dbconnect.php")?>
 <!DOCTYPE html>
 <html>
 

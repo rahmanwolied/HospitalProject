@@ -1,4 +1,3 @@
-<?php include("config/dbconnect.php")?>
 <!DOCTYPE html>
 <html>
 

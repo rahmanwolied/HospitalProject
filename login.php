@@ -1,6 +1,5 @@
 <?php 
     include('config/dbconnect.php');
-    echo $dbname;
 ?>
 
 

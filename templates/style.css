@@ -4,12 +4,14 @@
     box-sizing: border-box;
 }
 
-html,
-body {
-  height: 100%;
+main{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgb(164,182,194);
+    background: linear-gradient(0deg, rgba(164,182,194,1) 45%, rgba(216,181,179,1) 55%);
+    height: 75vh;
 }
-
-
 
 .footer{
     position: absolute;
@@ -60,9 +62,5 @@ body {
 .login-button{
     margin: 0px !important;
     color: #2c77ad !important;
-}
-
-form{
-    margin-top: 50px !important;
 }
 

@@ -6,6 +6,8 @@ st.title("Medicine Delivery with Drones")
 st.write("Welcome to our website! We deliver medicines with drones to remote, underserved and Indigenous communities. Our drone delivery service is cost-effective and can fly long distances over dangerous terrains to deliver medication, vaccines, blood and other samples, and diagnostic kits.")
 
 st.sidebar.title("Navigation")
+
+
 menu = ["Home", "About Us", "Services", "Contact Us"]
 choice = st.sidebar.selectbox("Select an option", menu)
 

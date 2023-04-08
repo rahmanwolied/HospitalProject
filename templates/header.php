@@ -13,15 +13,14 @@
 <body class="grey lighten-4">
     <div class="flex-container">
         <div class="flex-item1">
-
             <nav class="white">
                 <div class="nav-wrapper">
+                    <img src="assets/Group 1.svg" alt="icon">
                     <a href="index.php" class="brand-logo left brand-text">PharmAir</a>
                     <ul id="nav-mobile" class="right hide-on-small-and-down">
                         <li><a href="login.php" class="grey-text text-darken-2">Login</a></li>
                         <li><a href="register.php" class="grey-text text-darken-2">Register</a></li>
                     </ul>
-                    
                 </div>
             </nav>
 

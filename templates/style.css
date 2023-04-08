@@ -1,16 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;400&display=swap');
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Lexend', sans-serif;
+}
+
+nav div img{
+    padding: 10px;
 }
 
 main{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: rgb(164,182,194);
-    background: linear-gradient(0deg, rgba(164,182,194,1) 45%, rgba(216,181,179,1) 55%);
-    height: 75vh;
+    position: relative;
+}
+
+.hero img{
+    position: absolute;
+    width: 1440px;
+    height: 588px;
+    left: 0px;
+    top: 40px;
+}
+
+.hero-text{
+    position: absolute;
+    width: 374px;
+    height: 153px;
+    left: 63px;
+    top: 149px;
+    color: #FFFFFF;
+}
+
+.hero-text h1{
+    font-size: 40px;
+}
+
+.hero-text p{
+    font-size: 20px;
+    margin-top: 10px;
 }
 
 .footer{
@@ -25,10 +52,6 @@ main{
 .brand-text{
     color: #2c77ad !important;
     position: relative;
-}
-
-.brand-logo{
-    margin-left: 10px;
 }
 
 .page-footer{

@@ -1,8 +1,8 @@
 <?php include("config/dbconnect.php")?>
 
 <?php
-    $fname = $lname = $email = $username = $pass = $passconfirm = "";
-    $errors = array('fname' => '', 'lname' => '', 'email' => '', 'username' => '', 'pass' => '', 'passconfirm' => '');
+    $branch = $name = $fname = $lname = $email = $username = $pass = $passconfirm = "";
+    $errors = array('name'=> '','fname' => '', 'lname' => '', 'email' => '', 'username' => '', 'pass' => '', 'passconfirm' => '');
 
     if (isset($_POST['submit'])){
         // check first name
@@ -69,35 +69,31 @@
 }
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <title>Create Account</title>
-    <link rel="stylesheet" href="templates/style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-</head>
+<?php include('templates/header.php'); ?>
+
+
 
 <body class="grey lighten-4">
-    
+    <ul class="grey lighten-4">
+        <li class="tab col s3"><a class="active" href="reg_register.php">Regular Customer</a></li>
+        <li class="tab col s3"><a  href="h_register.php">Hospital</a></li>
+        <li class="tab col s3"><a href="p_register.php">Pharmacy</a></li>
+        <li class="tab col s3"><a href="d_register.php">Diagnostic Center</a></li>
+    </ul>
+
         <div class="container center login-card" >
             <div class="card white center">
                 <div class="card-content">
-                    <span class="card-title grey-text">Register</span>
+                    <span class="card-title grey-text">Pharmacy</span>
                     <form class = "col s12" action="register.php" method="POST">
-                        <div class="form-names">
 
-                            <div class="input-field">
-                                <input type="text" name="fname" placeholder="First Name" autocomplete="off" value="<?php echo htmlspecialchars($fname) ?>">
-                                <div class="red-text"> <?php echo htmlspecialchars($errors['fname']) ?>  </div>
-                            </div>
-                            
-                            <div class="input-field">
-                                <input type="text" name="lname" placeholder="Last Name" autocomplete="off" value="<?php echo htmlspecialchars($lname) ?>">
-                                <div class="red-text"> <?php echo htmlspecialchars($errors['lname']) ?>  </div>
-                            </div>
+                        <div class="input-field">
+                            <input type="text" name="name" placeholder="Name" autocomplete="off" value="<?php echo htmlspecialchars($name) ?>">
+                            <div class="red-text"> <?php echo htmlspecialchars($errors['name']) ?>  </div>
+                        </div>
+
+                        <div class="input-field">
+                            <input type="text" name="branch" placeholder="Branch" autocomplete="off" value="<?php echo htmlspecialchars($branch) ?>">
                         </div>
                         
                         <div class="input-field">

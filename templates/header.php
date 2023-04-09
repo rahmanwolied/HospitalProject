@@ -25,7 +25,7 @@
                         <a href="index.php" class="brand-logo left brand-text">PharmAir</a>
                         <ul id="nav-mobile" class="right hide-on-small-and-down">
                             <li><a href="login.php" class="grey-text text-darken-2">Login</a></li>
-                            <li><a href="register.php" class="grey-text text-darken-2">Register</a></li>
+                            <li><a href="reg_register.php" class="grey-text text-darken-2">Register</a></li>
                         </ul>
                     </div>
                 </nav>

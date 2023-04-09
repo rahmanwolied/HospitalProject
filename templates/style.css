@@ -1,4 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;400&display=swap');
+
+:root{
+    --primary-blue: #2C77AD;
+    --dark-grey: #B9B9B9;
+    --light-grey: #F5F5F5;
+    --green: #26B876;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -6,20 +14,22 @@
     font-family: 'Lexend', sans-serif;
 }
 
+
 nav div img{
     padding: 10px;
 }
 
 main{
     position: relative;
+    height: auto;
 }
 
-.hero img{
+main img{
     position: absolute;
-    width: 1440px;
-    height: 588px;
+    width: 100%;
     left: 0px;
-    top: 40px;
+    top: 0px;
+    z-index: -1;
 }
 
 .hero-text{
@@ -38,6 +48,86 @@ main{
 .hero-text p{
     font-size: 20px;
     margin-top: 10px;
+}
+
+.btn-full {
+    position: absolute;
+    top: 400px;
+    bottom: 0;
+    left: 63px;
+    border-radius: 8px;
+    background-color: #26B876;
+    box-shadow: none;
+    width: 165px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-text {
+    display: inline-block;
+    text-align: center;
+}
+
+.search-section{
+    position: absolute;
+    width: 1440px;
+    height: 447px;
+    left: 0px;
+    top: 649px;
+    background: var(--light-grey);
+}
+
+.search-text{
+    position: absolute;
+    width: 591px;
+    height: 79px;
+    left: 450px;
+    top: 50px;
+}
+
+.search-text h1{
+    font-size: 30px;
+    font-weight: 300;
+}
+
+.search-text p{
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.search-form{
+    position: absolute;
+    width: 586px;
+    height: 55px;
+    left: 427px;
+    top: 200px;
+    background: white;
+    border-radius: 26px;
+}
+
+.search-div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.products-div{
+    position: absolute;
+    width: 1440px;
+    height: 1000px;
+    left: 0px;
+    top: 1096px;
+    background: white;
+}
+
+.products-div h1{
+    font-size: 31px;
+    margin-top: 50px;
+    margin-left: 44px;
+    font-weight: 300;
 }
 
 .footer{
@@ -66,7 +156,6 @@ main{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    
 }
 
 .account-have{

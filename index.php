@@ -1,4 +1,12 @@
-<?php include('templates/header.php'); ?>
+<?php 
+    include('templates/header.php'); 
+
+    $sql = 'SELECT * FROM products';
+    $result = mysqli_query($conn, $sql);
+    $products = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    mysqli_free_result($result);
+    mysqli_close($conn);
+?>
 
 <main>
     <img src="assets/img-city 1.svg" alt="hero-image">
@@ -14,7 +22,7 @@
     </div>
 
     <div>
-        <a href="register.php" class="btn btn-full">
+        <a href="reg_register.php" class="btn btn-full">
             <span class="btn-text">Get Started</span>
         </a>
     </div>
@@ -47,7 +55,36 @@
     <h1>
         Shop Common Medicines
     </h1>
-
+    <div class="products">
+        <?php foreach($products as $product): ?>
+            <div class="row">
+                <div class="col s12 m7">
+                    <div class="card">
+                        <div class="card-image">
+                            <?php echo '<img src="'.$product['img'].'">';?>
+                        </div>
+                        <div class="card-content">
+                            <p><?php echo $product['name']?></p>
+                            <p>৳<?php echo $product['price']?></p>
+                            <p><?php if($product['stock_quantity'] == 0){
+                                $in_stock = false;
+                            }else{
+                                $in_stock = true;
+                            }?></p>
+                        </div>
+                        <div class="card-action">
+                            <?php if($in_stock){
+                                echo '<a href="#">Add to Cart</a>';
+                            }
+                            else{
+                                echo '<p style="color:red">Out of Stock</p>';
+                            }
+                                ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <?php endforeach; ?>
 </div>
 
 </html>

@@ -1,26 +1,17 @@
 <?php include("config/dbconnect.php")?>
 
 <?php
-    $branch = $name = $fname = $lname = $email = $username = $pass = $passconfirm = "";
-    $errors = array('name'=> '','fname' => '', 'lname' => '', 'email' => '', 'username' => '', 'pass' => '', 'passconfirm' => '');
+    $branch = $name = $email = $username = $pass = $passconfirm = "";
+    $errors = array('name'=> '', 'email' => '', 'username' => '', 'pass' => '', 'passconfirm' => '');
 
     if (isset($_POST['submit'])){
         // check first name
-        if(empty($_POST['fname'])){
-            $errors['fname'] = 'A first name is required ';
+        if(empty($_POST['name'])){
+            $errors['name'] = 'A name is required ';
         } else{
-            $fname = $_POST['fname'];
-            if(!preg_match('/^[a-zA-Z\s]+$/', $fname)){
-                $errors['fname'] = 'First name must be letters and spaces only';
-            }
-        }
-        // check last name
-        if(empty($_POST['lname'])){
-            $errors['lname'] = 'A last name is required';
-        } else{
-            $lname = $_POST['lname'];
-            if(!preg_match('/^[a-zA-Z\s]+$/', $lname)){
-                $errors['lname'] = 'Last name must be letters and spaces only';
+            $name = $_POST['name'];
+            if(!preg_match('/^[a-zA-Z\s]+$/', $name)){
+                $errors['name'] = 'First name must be letters and spaces only';
             }
         }
         // check email
@@ -32,6 +23,7 @@
                 $errors['email'] = 'Email must be a valid email address';
             }
         }
+        
         // check username
         if(empty($_POST['username'])){
             $errors['username'] = 'A username is required';
@@ -40,7 +32,13 @@
             if(!preg_match('/^[a-zA-Z0-9]+$/', $username)){
                 $errors['username'] = 'Invalid characters in username';
             }
-        }
+            $sql = "SELECT * FROM customers WHERE c_id = '$username'";
+            $result = mysqli_query($conn, $sql);
+            if(mysqli_num_rows($result) > 0){
+                $errors['username'] = 'Username already exists';
+            }
+        } 
+
         // check password
         if(empty($_POST['pass'])){
             $errors['pass'] = 'A password is required';
@@ -55,11 +53,21 @@
             $errors['passconfirm'] = 'You have to Type the password again';
         } else if($_POST['passconfirm'] != $_POST['pass']){
             $errors['passconfirm'] = 'Passwords do not match';
-    }
+        }
+
+        if(!empty($_POST['branch'])){
+            $branch = $_POST['branch'];
+        }
 
     if(!array_filter($errors)){
-        $sql = "INSERT INTO users(fname, lname, email, username, password) VALUES('$fname', '$lname', '$email', '$username', '$pass')";
+        $name = mysqli_real_escape_string($conn, $_POST['name']);
+        $email = mysqli_real_escape_string($conn, $_POST['email']);
+        $branch = mysqli_real_escape_string($conn, $_POST['branch']);
+        $username = mysqli_real_escape_string($conn, $_POST['username']);
+        $pass = mysqli_real_escape_string($conn, $_POST['pass']);
 
+        $sql = "INSERT INTO customers(name, email, c_id, password, discount) VALUES('$name', '$email', '$username', '$pass', 5)";
+        
         if(mysqli_query($conn, $sql)){
             header('Location: index.php');
         } else{
@@ -85,7 +93,7 @@
             <div class="card white center">
                 <div class="card-content">
                     <span class="card-title grey-text">Pharmacy</span>
-                    <form class = "col s12" action="register.php" method="POST">
+                    <form class = "col s12" action="p_register.php" method="POST">
 
                         <div class="input-field">
                             <input type="text" name="name" placeholder="Name" autocomplete="off" value="<?php echo htmlspecialchars($name) ?>">

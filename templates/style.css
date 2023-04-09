@@ -130,6 +130,14 @@ main img{
     font-weight: 300;
 }
 
+.products{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
 .footer{
     position: absolute;
     bottom: 0;

@@ -58,7 +58,7 @@
     }
 
     if(!array_filter($errors)){
-        $sql = "INSERT INTO users(first_name, last_name, email, username, password) VALUES('$fname', '$lname', '$email', '$username', '$pass')";
+        $sql = "INSERT INTO customers(first_name, last_name, email, c_id, password) VALUES('$fname', '$lname', '$email', '$username', '$pass')";
 
         if(mysqli_query($conn, $sql)){
             header('Location: index.php');
@@ -67,6 +67,7 @@
         }
     }
 }
+
 ?>
 
 <?php include('templates/header.php'); ?>
@@ -87,7 +88,7 @@
             <div class="card white center">
                 <div class="card-content">
                     <span class="card-title grey-text">Regular Customer</span>
-                    <form class = "col s12" action="register.php" method="POST">
+                    <form class = "col s12" action="reg_register.php" method="POST">
                         <div class="form-names">
 
                             <div class="input-field">

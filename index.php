@@ -57,30 +57,28 @@
     </h1>
     <div class="products">
         <?php foreach($products as $product): ?>
-            <div class="row">
-                <div class="col s12 m7">
-                    <div class="card">
-                        <div class="card-image">
-                            <?php echo '<img src="'.$product['img'].'">';?>
-                        </div>
-                        <div class="card-content">
-                            <p><?php echo $product['name']?></p>
-                            <p>৳<?php echo $product['price']?></p>
-                            <p><?php if($product['stock_quantity'] == 0){
-                                $in_stock = false;
-                            }else{
-                                $in_stock = true;
-                            }?></p>
-                        </div>
-                        <div class="card-action">
-                            <?php if($in_stock){
-                                echo '<a href="#">Add to Cart</a>';
-                            }
-                            else{
-                                echo '<p style="color:red">Out of Stock</p>';
-                            }
-                                ?>
-                        </div>
+            <div class="col s12 m7">
+                <div class="card">
+                    <div class="card-image">
+                        <?php echo '<img src="'.$product['img'].'">';?>
+                    </div>
+                    <div class="card-content">
+                        <p><?php echo $product['name']?></p>
+                        <p>৳<?php echo $product['price']?></p>
+                        <p><?php if($product['stock_quantity'] == 0){
+                            $in_stock = false;
+                        }else{
+                            $in_stock = true;
+                        }?></p>
+                    </div>
+                    <div class="card-action">
+                        <?php if($in_stock){
+                            echo '<a href="#">Add to Cart</a>';
+                        }
+                        else{
+                            echo '<p style="color:red">Out of Stock</p>';
+                        }
+                            ?>
                     </div>
                 </div>
             </div>

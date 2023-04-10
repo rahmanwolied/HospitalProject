@@ -5,26 +5,31 @@
     $errors = array('username'=> '', 'password' => '');
 
     if (isset($_POST['submit'])){
-        // check first name
+        // check username
         if(empty($_POST['username'])){
             $errors['username'] = 'Please type your username';
         } else{
-            $username = $_POST['username'];
+            $username = mysqli_real_escape_string($conn, $_POST['username']);
+            $sql = "SELECT * FROM customers WHERE c_id = '$username'";
+            $result = mysqli_query($conn, $sql);
+            if(mysqli_num_rows($result) == 0){
+                $errors['username'] = 'No user with this username found';
+            }
+            else{
+                $cpass = mysqli_fetch_assoc($result)['password'];
+            }
         }
+
         if(empty($_POST['password'])){
             $errors['password'] = 'Please type your password';
         } else{
-            $password = $_POST['password'];
+            $password = mysqli_real_escape_string($conn, $_POST['password']);
+            if($password != $cpass){
+                $errors['password'] = 'Password is incorrect';
+            }
         }
-        
-        $username = mysqli_real_escape_string($conn, $_POST['username']);
-        $pass = mysqli_real_escape_string($conn, $_POST['password']);
 
-        $sql = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
-        $result = mysqli_query($conn, $sql);
-        if(mysqli_num_rows($result) == 0){
-            $errors['username'] = 'No user found';
-        }
+
         
         if(!array_filter($errors)){
             
@@ -50,7 +55,7 @@
                     <span class="card-title grey-text">Login</span>
                     <form class = "col s12" action="login.php" method="POST">
                         <div class="input-field">
-                            <input type="text" name="username" value="<?php echo htmlspecialchars($name) ?>" >
+                            <input type="text" name="username" value="<?php echo htmlspecialchars($username) ?>" >
                             <div class="red-text"> <?php echo htmlspecialchars($errors['username']) ?>  </div>
                             <label for="username">Username</label>
                         </div>

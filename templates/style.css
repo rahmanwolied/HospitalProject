@@ -132,10 +132,9 @@ main img{
 
 .products{
     display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+    justify-content: flex-start;
     flex-wrap: wrap;
-    padding: 10px;
+    gap: 20px;
 }
 
 .footer{

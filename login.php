@@ -1,52 +1,51 @@
 <?php 
-    include('config/dbconnect.php');
+    // include('config/dbconnect.php');
+    // $username = $password = "";
+    // $errors = array('username'=> '', 'password' => '');
 
-    $username = $password = "";
-    $errors = array('username'=> '', 'password' => '');
+    // if (isset($_POST['submit'])){
+    //     // check username
+    //     if(empty($_POST['username'])){
+    //         $errors['username'] = 'Please type your username';
+    //     } 
+    //     else{
+    //         $username = mysqli_real_escape_string($conn, $_POST['username']);
+    //         $sql = "SELECT * FROM customers WHERE c_id = '$username'";
+    //         $result = mysqli_query($conn, $sql);
 
-    if (isset($_POST['submit'])){
-        // check username
-        if(empty($_POST['username'])){
-            $errors['username'] = 'Please type your username';
-        } else{
-            $username = mysqli_real_escape_string($conn, $_POST['username']);
-            $sql = "SELECT * FROM customers WHERE c_id = '$username'";
-            $result = mysqli_query($conn, $sql);
-            if(mysqli_num_rows($result) == 0){
-                $errors['username'] = 'No user with this username found';
-            }
-            else{
-                $cpass = mysqli_fetch_assoc($result)['password'];
-            }
-        }
-
-        if(empty($_POST['password'])){
-            $errors['password'] = 'Please type your password';
-        } else{
-            $password = mysqli_real_escape_string($conn, $_POST['password']);
-            if($password != $cpass){
-                $errors['password'] = 'Password is incorrect';
-            }
-        }
+    //         if(mysqli_num_rows($result) == 0){
+    //             $errors['username'] = 'No user with this username found';
+    //         }
+    //         else{
+    //             $cpass = mysqli_fetch_assoc($result)['password'];
+    //         }
+    //     }
+    
+    //     if(empty($_POST['password'])){
+    //         $errors['password'] = 'Please type your password';
+    //     } else{
+    //         $password = mysqli_real_escape_string($conn, $_POST['password']);
+    //         if($password != $cpass){
+    //             $errors['password'] = 'Password is incorrect';
+    //         }
+    //     }
 
 
         
-        if(!array_filter($errors)){
+    //     if(!array_filter($errors)){
             
-            if(mysqli_query($conn, $sql)){
-                header('Location: index.php');
-            } else{
-                echo 'query error: ' . mysqli_error($conn);
-            }
-        }
-    }
+    //         if(mysqli_query($conn, $sql)){
+    //             header('Location: index.php');
+    //         } else{
+    //             echo 'query error: ' . mysqli_error($conn);
+    //         }
+    //     }
+    // }
 ?>
 
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
-
-    <?php include("templates/header.php")?>
     <div class="flex-item2">
 
         <div class="container center login-card" >
@@ -55,7 +54,7 @@
                     <span class="card-title grey-text">Login</span>
                     <form class = "col s12" action="login.php" method="POST">
                         <div class="input-field">
-                            <input type="text" name="username" value="<?php echo htmlspecialchars($username) ?>" >
+                            <input type="text" name="username" value="<?php echo htmlspecialchars($username) ?>//" >
                             <div class="red-text"> <?php echo htmlspecialchars($errors['username']) ?>  </div>
                             <label for="username">Username</label>
                         </div>
@@ -78,8 +77,7 @@
 
             
         </div>
-            <?php include("templates/footer.php")?>
         
     </div>
 
-</html>
+</html> -->

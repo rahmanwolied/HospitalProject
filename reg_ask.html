@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="templates/style.css">
+    <title>Register</title>
+</head>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+    :root{
+    --primary-blue: #2C77AD;
+    --dark-grey: #B9B9B9;
+    --light-grey: #F5F5F5;
+    --green: #26B876;
+}
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
+    body{
+        background: var(--light-grey);
+        text-align: center;
+        padding: 5rem;
+    }
+    .reg-cards{
+        margin: 3rem;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-top: 5rem;
+    }
+
+    .reg-card{
+        border: var(--dark-grey) 2px solid;
+        width: 20rem;
+        height: 20rem;
+        background: white;
+        border-radius: 1rem;
+        margin: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .reg-card h2{
+        font-size: 1.5rem;
+        margin-top: 1rem;
+        color: var(--primary-blue);
+        font-weight: 300;
+    }
+
+    .reg-card i{
+        font-size: 5rem;
+        color: var(--primary-blue);
+        animation: none;
+
+    }
+    
+    .reg-card:hover{
+        transform: translateY(-5px);
+        box-shadow: 0 1rem 2rem rgba(0,0,0,0.2);
+    }
+
+    .reg-card:hover i{
+        animation: tada 1s infinite;
+    }
+
+</style>
+
+<body class="reg-ask">
+        <h1>Register as</h1>
+
+        <div class="reg-cards">
+            <a href="reg_register.php">
+                <div class="reg-card">
+                    <i class='icon bx bxs-user-circle bx-tada'></i>
+                    <h2>Regular User</h2>
+                </div>
+            </a>
+            
+            <a href="h_register.php">
+                <div class="reg-card">
+                    <i class='icon bx bxs-buildings bx-tada' ></i>
+                    <h2>Hospital</h2>
+                </div>
+            </a>
+            
+            <a href="p_register.php">
+                <div class="reg-card">
+                    <i class='icon bx bx-capsule bx-tada' ></i>
+                    <h2>Pharmacy</h2>
+                </div>
+            </a>
+            
+            <a href="d_register.php">
+                <div class="reg-card">
+                    <i class='icon bx bx-plus-medical bx-tada' ></i>
+                    <h2>Diagnostic Center</h2>
+                </div>
+            </a>
+
+        </div>
+</body>
+</html>

@@ -9,11 +9,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>PharmAir</title>
         <!-- stylesheet -->
+        <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="templates/style.css">
     </head>
 
-    <body class="grey lighten-4">
+    <body>
         <header>
             <nav>
                 <div class="logo">
@@ -21,9 +22,13 @@
                     <a href="index.php">PharmAir</a>
                 </div>
 
-                <ul id="nav-mobile" class="right hide-on-small-and-down">
-                    <li><a href="login.php" class="grey-text text-darken-2">Login</a></li>
-                    <li><a href="reg_register.php" class="grey-text text-darken-2">Register</a></li>
+                <ul>
+                    <li><button data-modal-target="#login-modal">Login</button></li>
+                    <li>
+                        <a href="reg_ask.html">
+                            <button href='reg_register.php' >Register</button>
+                        </a>
+                    </li>
                 </ul>
 
             </nav>

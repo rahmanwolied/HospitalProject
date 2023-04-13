@@ -19,7 +19,7 @@
             </p>
         </div>
         
-        <a class="get-started" href="reg_register.php">
+        <a class="get-started" href="reg_ask.html">
             Get Started
         </a>
     </section>
@@ -68,22 +68,66 @@
     </section>
 </main>
 
-    <div class="login-card">
-        <div class="login-img">
-            <img src="assets/img1.jpeg" alt="">
-        </div>
-
-        <div class="login-content">
-            <h1>Login</h1>
-            <form action="index.php" method="POST">
-                <label for="username">Username</label>
-                <input type="text" name="username" placeholder="Username">
-                <input type="password" name="password" placeholder="Password">
-                <input type="submit" name="submit" value="Login">
-            </form>
-        </div>
+<div class="login-card" id='login-modal'>
+    <div class="login-img">
+        <img src="assets/img1.jpeg" alt="">
     </div>
 
+    <div class="login-content">
+        <h1>Login</h1>
+        <div class="form-content">
+            <form action="index.php" method="POST">
+                <div>
+                    <div> <?php echo htmlspecialchars($errors['username'])?> </div>
+                    <input type="text" name="username" placeholder="Username">
+                </div>
+                <div>
+                    <input type="password" name="password" placeholder="Password">
+                </div>
+                <input type="submit" name="submit" value="Login">
+            </form>
+            <p>Don't have an account? <a href="reg_register.php">Register</a></p>
+        </div>
+    </div>
+    <button data-close-button class="close-button">&times;</button>
+</div>
+
+<div class="overlay" id="overlay"></div>
+
+
+
+<script>
+    const openModalButtons = document.querySelectorAll('[data-modal-target]')
+    const closeModalButtons = document.querySelectorAll('[data-close-button]')
+    const overlay = document.getElementById('overlay')
+    
+    openModalButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const modal = document.querySelector(button.dataset.modalTarget)
+            openModal(modal)
+        })
+    })
+
+    closeModalButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const modal = button.closest('.login-card')
+            closeModal(modal)
+        })
+    })
+
+    function openModal(modal) {
+        if (modal == null) return
+        modal.classList.add('active')
+        overlay.classList.add('active')
+    }
+
+    function closeModal(modal) {
+        if (modal == null) return
+        modal.classList.remove('active')
+        overlay.classList.remove('active')
+    }
+
+
+</script>
+
 </html>
-    
-    

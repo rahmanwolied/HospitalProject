@@ -68,21 +68,30 @@
     </section>
 </main>
 
-    <div class="login-card">
-        <div class="login-img">
-            <img src="assets/img1.jpeg" alt="">
-        </div>
+<div class="login-card">
+    <div class="login-img">
+        <img src="assets/img1.jpeg" alt="">
+    </div>
 
-        <div class="login-content">
-            <h1>Login</h1>
+    <div class="login-content">
+        <h1>Login</h1>
+        <div class="form-content">
             <form action="index.php" method="POST">
-                <label for="username">Username</label>
-                <input type="text" name="username" placeholder="Username">
-                <input type="password" name="password" placeholder="Password">
+                <div>
+                    <input type="text" name="username" placeholder="Username">
+                </div>
+                <div>
+                    <input type="password" name="password" placeholder="Password">
+                </div>
                 <input type="submit" name="submit" value="Login">
             </form>
+            <p>Don't have an account? <a href="reg_register.php">Register</a></p>
         </div>
     </div>
+    <button class="close-button">&times;</button>
+</div>
+
+<div class="overlay"></div>
 
 </html>
     

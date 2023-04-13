@@ -76,6 +76,9 @@
     <div class="login-content">
         <h1>Login</h1>
         <div class="form-content">
+    <div class="login-content">
+        <h1>Login</h1>
+        <div class="form-content">
             <form action="index.php" method="POST">
                 <div>
                     <div> <?php echo htmlspecialchars($errors['username'])?> </div>
@@ -86,6 +89,7 @@
                 </div>
                 <input type="submit" name="submit" value="Login">
             </form>
+            <p>Don't have an account? <a href="reg_register.php">Register</a></p>
             <p>Don't have an account? <a href="reg_register.php">Register</a></p>
         </div>
     </div>

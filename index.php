@@ -1,13 +1,16 @@
 <?php 
     include('templates/header.php'); 
     include('login.php');
-
+    
     $sql = 'SELECT * FROM products';
     $result = mysqli_query($conn, $sql);
     $products = mysqli_fetch_all($result, MYSQLI_ASSOC);
     mysqli_free_result($result);
     mysqli_close($conn);
-?>
+    ?>
+
+
+<script src="js/login.js"></script>
 
 <main>
     <section class="hero">
@@ -23,7 +26,7 @@
             Get Started
         </a>
     </section>
-
+    
     <section class="search-section">
         <div class="search-text">
             <h1>
@@ -34,15 +37,15 @@
             </p>
         </div>
         
-
+        
         <form>
-                <input id="search" type="search" class='search-input'>
-                <input type="submit" value="Search" class="btn">
+            <input id="search" type="search" class='search-input'>
+            <input type="submit" value="Search" class="btn">
         </form>
-
-
+        
+        
     </section>
-
+    
     <section class="products-section">
         <h1>
             Shop Common Medicines
@@ -63,18 +66,18 @@
                         }?></p>
                     </div>
                 </a>
-            <?php endforeach; ?>
+                <?php endforeach; ?>
+            </div>
+        </section>
+    </main>
+    
+    <div class="login-card" id='login-modal'>
+        <div class="login-img">
+            <img src="assets/img1.jpeg" alt="">
         </div>
-    </section>
-</main>
-
-<div class="login-card" id='login-modal'>
-    <div class="login-img">
-        <img src="assets/img1.jpeg" alt="">
-    </div>
-
-    <div class="login-content">
-        <h1>Login</h1>
+        
+        <div class="login-content">
+            <h1>Login</h1>
         <div class="form-content">
             <form action="index.php" method="POST" id="login-form">
                 <div id="error"></div>
@@ -94,32 +97,6 @@
 
 <div class="overlay" id="overlay"></div>
 
-
-
 <script src="js/scripts.js"></script>
-<script src="js/jquery.js"></script>
-
-<script>
-    $(document).ready(function(){
-        $('#login-form').on('submit', function(e){
-            e.preventDefault();
-            var username = $('#username').val();
-            var password = $('#password').val();
-            $.ajax({
-                url: 'login.php',
-                type: 'POST',
-                data: {username: username, password: password},
-                success: function(data){
-                    if(data == 1){
-                        location.reload();
-                    }
-                    else{
-                        $('#error').html(data);
-                    }
-                }
-            });
-        });
-    });
-</script>
 
 </html>

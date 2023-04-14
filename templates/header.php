@@ -13,6 +13,7 @@
         <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="templates/style.css">
+        <script src="js/jquery.js"></script>
     </head>
 
     <body>

@@ -72,64 +72,67 @@
 
 <?php include('templates/header.php'); ?>
 
+<div style="background: #f5f5f5; position: absolute; bottom: 0; right: 0; left: 0; top: 64px;">
 
-
-<body>
-    <ul>
-        <li><a href="reg_register.php">Regular Customer</a></li>
-        <li><a href="h_register.php">Hospital</a></li>
-        <li><a href="p_register.php">Pharmacy</a></li>
-        <li><a href="d_register.php">Diagnostic Center</a></li>
-    </ul>
-    <div>
-        <div>
-            <div>
-                <span>Regular Customer</span>
+    <div class="login-card active">
+        <div class="login-img">
+            <img src="assets/img-redbox.jpg" alt="">
+        </div>
+        
+        <div class="register-content">
+            <h3>Regular Customer</h3>
+            <div class="form-content register">
+                
                 <form action="reg_register.php" method="POST">
-                    <div class="form-names">
-
-                        <div class="input-field">
-                            <input type="text" name="fname" placeholder="First Name" autocomplete="off" value="<?php echo htmlspecialchars($fname) ?>">
-                            <div class="red-text"> <?php echo htmlspecialchars($errors['fname']) ?>  </div>
-                        </div>
-                        
-                        <div class="input-field">
-                            <input type="text" name="lname" placeholder="Last Name" autocomplete="off" value="<?php echo htmlspecialchars($lname) ?>">
-                            <div class="red-text"> <?php echo htmlspecialchars($errors['lname']) ?>  </div>
-                        </div>
+                    <div>
+                        <input class="register-field" type="text" name="fname" placeholder="First Name" autocomplete="off" value="<?php echo htmlspecialchars($fname) ?>">
+                        <div class="red-text"> <?php echo htmlspecialchars($errors['fname']) ?>  </div>
                     </div>
                     
-                    <div class="input-field">
-                        <input type="email" name="email" placeholder="Email" value="<?php echo htmlspecialchars($email) ?>" autocomplete="off" class="validate">
+                    <div>
+                        <input class="register-field" type="text" name="lname" placeholder="Last Name" autocomplete="off" value="<?php echo htmlspecialchars($lname) ?>">
+                        <div class="red-text"> <?php echo htmlspecialchars($errors['lname']) ?>  </div>
+                    </div>
+                    
+                    <div>
+                        <input class="register-field" type="email" name="email" placeholder="Email" value="<?php echo htmlspecialchars($email) ?>" autocomplete="off" class="validate">
                         <div class="red-text"> <?php echo htmlspecialchars($errors['email']) ?>  </div>
                     </div>
                     
-                    <div class="input-field">
-                        <input type="text" name="username" id="username" placeholder="Username" value="<?php echo htmlspecialchars($username) ?>" autocomplete="off" class="validate">
+                    <div>
+                        <input class="register-field" type="text" name="username" id="username" placeholder="Username" value="<?php echo htmlspecialchars($username) ?>" autocomplete="off" class="validate">
                         <div class="red-text"> <?php echo htmlspecialchars($errors['username']) ?>  </div>
                     </div>
                     
-                    <div class="input-field">
-                        <input type="password" name="pass" id="password" placeholder="Pasword" autocomplete="off">
+                    <div>
+                        <input class="register-field" type="password" name="pass" id="password" placeholder="Pasword" autocomplete="off">
                         <div class="red-text"> <?php echo htmlspecialchars($errors['pass']) ?>  </div>
                     </div>
                     
-                    <div class="input-field">
-                        <input type="password" name="passconfirm" placeholder="Confirm Password" autocomplete="off">
+                    <div>
+                        <input class="register-field" type="password" name="passconfirm" placeholder="Confirm Password" autocomplete="off">
                         <div class="red-text"> <?php echo htmlspecialchars($errors['passconfirm']) ?>  </div>
                     </div>
-
-                    <div class="center">
-                        <input style="margin-top: 20px;"type="submit" name="submit" value="Register" class="btn brand z-depth-0">
+                    <div>
+                        <input class="register-field" type="number" name="phone" placeholder="Phone" autocomplete="off">
                     </div>
-
-                    <div class="grey-text center account-have" style="padding-top: 24px;">
-                        Already have an account?<a class="blue-text" href="index.php"> Sign in</a>
+                    <div>
+                        <input class="register-field" type="text" name="city" placeholder="City" autocomplete="off">
                     </div>
-
+                    <div>
+                        <input class="register-field" type="text" name="street" placeholder="Street" autocomplete="off">
+                    </div>
+                    
+                    <div >
+                        <input class="submit-btn" type="submit" name="submit" value="Register" class="btn brand z-depth-0">
+                    </div>
+                </div>
+                <div style="padding: 10px; font-size: 0.5rem;">
+                    Already have an account?<a class="blue-text" href="index.php"> Sign in</a>
                 </div>
             </div>
-    </div>
-
-</body>
-</html>
+            
+        </div>
+</div>
+        
+        </html>

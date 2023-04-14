@@ -1,12 +1,12 @@
 <?php 
     include('config/dbconnect.php');
-    $username = $password = "";
-    $errors = array('username'=> '', 'password' => '');
+    $error = false;
 
-    if (isset($_POST['submit'])){
+    if (isset($_POST['username']) && isset($_POST['password'])){
         // check username
         if(empty($_POST['username'])){
-            $errors['username'] = 'Please type your username';
+            echo 'Please type your username';
+            $error = true;
         } 
         else{
             $username = mysqli_real_escape_string($conn, $_POST['username']);
@@ -14,32 +14,32 @@
             $result = mysqli_query($conn, $sql);
 
             if(mysqli_num_rows($result) == 0){
-                $errors['username'] = 'No user with this username found';
+                echo 'No user with this username found';
+                $error = true;
             }
             else{
                 $cpass = mysqli_fetch_assoc($result)['password'];
+
+                if(empty($_POST['password'])){
+                    echo 'Please type your password';
+                    $error = true;
+                } else{
+                    $password = mysqli_real_escape_string($conn, $_POST['password']);
+                    if($password != $cpass){
+                        echo 'Password is incorrect';
+                        $error = true;
+                    }
+                }
             }
+        }
+        
+        if(!$error){
+            session_start();
+            $_SESSION['username'] = $username;
+            echo 1;
+            exit();
         }
     
-        if(empty($_POST['password'])){
-            $errors['password'] = 'Please type your password';
-        } else{
-            $password = mysqli_real_escape_string($conn, $_POST['password']);
-            if($password != $cpass){
-                $errors['password'] = 'Password is incorrect';
-            }
-        }
-
-
-        
-        if(!array_filter($errors)){
-            
-            if(mysqli_query($conn, $sql)){
-                header('Location: index.php');
-            } else{
-                echo 'query error: ' . mysqli_error($conn);
-            }
-        }
     }
 ?>
 

@@ -76,15 +76,15 @@
     <div class="login-content">
         <h1>Login</h1>
         <div class="form-content">
-            <form action="index.php" method="POST">
+            <form action="index.php" method="POST" id="login-form">
+                <div id="error"></div>
                 <div>
-                    <div> <?php echo htmlspecialchars($errors['username'])?> </div>
-                    <input type="text" name="username" placeholder="Username">
+                    <input type="text" class="input-field" id="username" name="username" placeholder="Username">
                 </div>
                 <div>
-                    <input type="password" name="password" placeholder="Password">
+                    <input type="password" class="input-field" id="password" name="password" placeholder="Password">
                 </div>
-                <input type="submit" name="submit" value="Login">
+                <input type="submit" class="submit-btn" name="submit" value="Login">
             </form>
             <p>Don't have an account? <a href="reg_register.php">Register</a></p>
         </div>
@@ -96,38 +96,30 @@
 
 
 
+<script src="js/scripts.js"></script>
+<script src="js/jquery.js"></script>
+
 <script>
-    const openModalButtons = document.querySelectorAll('[data-modal-target]')
-    const closeModalButtons = document.querySelectorAll('[data-close-button]')
-    const overlay = document.getElementById('overlay')
-    
-    openModalButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const modal = document.querySelector(button.dataset.modalTarget)
-            openModal(modal)
-        })
-    })
-
-    closeModalButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const modal = button.closest('.login-card')
-            closeModal(modal)
-        })
-    })
-
-    function openModal(modal) {
-        if (modal == null) return
-        modal.classList.add('active')
-        overlay.classList.add('active')
-    }
-
-    function closeModal(modal) {
-        if (modal == null) return
-        modal.classList.remove('active')
-        overlay.classList.remove('active')
-    }
-
-
+    $(document).ready(function(){
+        $('#login-form').on('submit', function(e){
+            e.preventDefault();
+            var username = $('#username').val();
+            var password = $('#password').val();
+            $.ajax({
+                url: 'login.php',
+                type: 'POST',
+                data: {username: username, password: password},
+                success: function(data){
+                    if(data == 1){
+                        location.reload();
+                    }
+                    else{
+                        $('#error').html(data);
+                    }
+                }
+            });
+        });
+    });
 </script>
 
 </html>

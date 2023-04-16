@@ -3,6 +3,7 @@
 :root{
     --primary-blue: #2C77AD;
     --dark-grey: #B9B9B9;
+    --darker-grey: #4F4F4F;
     --light-grey: #F5F5F5;
     --green: #26B876;
 }
@@ -50,7 +51,7 @@ nav ul{
 }
 
 nav ul li button{
-    color: var(--dark-grey);
+    color: var(--darker-grey);
     font-size: 1rem;
     border: none;
     background: none;
@@ -188,6 +189,34 @@ nav ul li button{
     color: black;
 }
 
+.card-image{
+    width: 263px;
+    height: 200px;
+    overflow: hidden;
+}
+
+.card-image img{
+    width: 100%;
+    height: 100%;
+    border-radius: 28px;
+}
+
+.cart-btn{
+    width: 200px;
+    height: 40px;
+    border-radius: 28px;
+    background: var(--primary-blue);
+    color: white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 0.7rem;
+    margin-top: 60px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+
 .card:hover{
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
@@ -231,6 +260,7 @@ nav ul li button{
     justify-content: space-between;
     z-index: 10;
 }
+
 
 .login-card.active{
     transform: translate(-50%, -50%) scale(1);
@@ -296,6 +326,39 @@ nav ul li button{
 }
 
 #error{
-    color: rgba(255, 0, 0, 0.5);
     font-size: 0.8rem;
+}
+
+.message{
+    background-color: rgba(0, 255, 0, 0.5);
+    color: black;
+    font-size: 1rem;
+}
+
+.message.error{
+    background-color: rgba(255, 0, 0, 0.5);
+}   
+
+/* -------------------------cart */
+.pay_methods{
+    width: 100px;
+    height: 100px;
+    margin: 40px;
+    border: 1px solid var(--darker-grey);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.pay_methods:hover{
+    transform: translate(0, -5px) scale(1.1);
+}
+
+.pay_methods img{
+    width: 100%;
+    height: 100%;
+    padding: 20px;
 }

@@ -2,7 +2,7 @@
     include('templates/header.php'); 
     include('login.php');
     
-    $sql = 'SELECT * FROM products';
+    $sql = 'SELECT * FROM product';
     $result = mysqli_query($conn, $sql);
     $products = mysqli_fetch_all($result, MYSQLI_ASSOC);
     mysqli_free_result($result);
@@ -11,6 +11,7 @@
 
 
 <script src="js/login.js"></script>
+<script src="js/cart.js"></script>
 
 <main>
     <section class="hero">
@@ -52,21 +53,23 @@
         </h1>
         <div class="products">
             <?php foreach($products as $product): ?>
-                <a href="#" class="card">
+                <div class="card">
                     <div class="card-image">
-                        <?php echo '<img src="'.$product['img'].'">';?>
+                        <?php echo '<img src="'.$product['Img'].'">';?>
                     </div>
                     <div class="card-content">
-                        <p><?php echo $product['name']?></p>
-                        <p>৳<?php echo $product['price']?></p>
-                        <p><?php if($product['stock_quantity'] == 0){
-                            $in_stock = false;
+                        <div class="message" <?php echo "id = '{$product['ID']}'"?>></div>
+                        <p><?php echo $product['Name']?></p>
+                        <p>৳<?php echo $product['Price']?></p>
+                        <?php if($product['Stock_Quantity'] == 0){
+                            echo "<button disabled>Out of Stock</button>";
                         }else{
-                            $in_stock = true;
-                        }?></p>
+                            echo "<button class='cart-btn' data-product-id ='{$product['ID']}'>Add to Cart</button>";
+                        }?>
+                    
                     </div>
-                </a>
-                <?php endforeach; ?>
+                </div>
+            <?php endforeach; ?>
             </div>
         </section>
     </main>

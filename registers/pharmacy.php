@@ -1,46 +1,44 @@
-<?php include("../config/dbconnect.php")?>
+<?php 
+	include("../config/dbconnect.php");
 
-<link rel="stylesheet" href="../templates/register.css">
+	if(isset($_POST['username']) && isset($_POST['password'])){
+		$username = mysqli_real_escape_string($conn, $_POST['username']);
 
-<head>
-	<title>Register Form</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-</head>
+		$sql = "SELECT * FROM customers WHERE c_id = '$username'";
+		$result = mysqli_query($conn, $sql);
 
-<body>
-	<div class="form">
-		<h2>Pharmacy</h2>
-		<form action="register.php" method="post">
+		if(mysqli_num_rows($result) > 0){
+			echo 'Username already exists';
+		} else{
+			$username = mysqli_real_escape_string($conn, $_POST['username']);
+			$name = mysqli_real_escape_string($conn, $_POST['name']);
+			$email = mysqli_real_escape_string($conn, $_POST['email']);
+			$phone = mysqli_real_escape_string($conn, $_POST['phone']);
+			$password = mysqli_real_escape_string($conn, $_POST['password']);
+			$numBranches = $_POST['numBranches'];
 
-			<label for="name">Name:</label>
-			<input type="text" id="name" name="name" required>
+			for($i = 0 ; $i < $numBranches ; $i++){
+				$username = mysqli_real_escape_string($conn, $_POST['username']);
+				$branch = mysqli_real_escape_string($conn, $_POST['branches'][$i]);
+				$address = mysqli_real_escape_string($conn, $_POST['addresses'][$i]);
+				$city = mysqli_real_escape_string($conn, $_POST['cities'][$i]);
+				$street = mysqli_real_escape_string($conn, $_POST['streets'][$i]);
+				$zip = mysqli_real_escape_string($conn, $_POST['zips'][$i]);
 
-			<label for="username">Username:</label>
-			<input type="text" id="username" name="username" required>
+				$sql = "INSERT INTO branches (c_id, branch, address, city, street, zip) VALUES ('$username', '$branch', '$address', '$city', '$street', '$zip')";
+				if(!mysqli_query($conn, $sql)){
+					echo 'Error: ' . mysqli_error($conn);
+				}
+			}
 
-			<label for="email">Email:</label>
-			<input type="email" id="email" name="email" required>
+			$sql = "INSERT INTO customers (C_ID, password, name, email, phone, discount) VALUES ('$username', '$password', '$name', '$email', '$phone', 5)";
 
-			<label for="password">Password:</label>
-			<input type="password" id="password" name="password" required>
+			if(mysqli_query($conn, $sql)){
+				echo 1;
+			} else{
+				echo 'Error: ' . mysqli_error($conn);
+			}
+		}
 
-			<label for="phone">Phone:</label>
-			<input type="tel" id="phone" name="phone" required>
-
-			<label for="city">Address:</label>
-			<input type="text" id="city" name="address" required>
-
-			<label for="city">City:</label>
-			<input type="text" id="city" name="city" required>
-
-			<label for="street">Street:</label>
-			<input type="text" id="street" name="street" required>
-
-			<label for="zip">ZIP:</label>
-			<input type="text" id="zip" name="zip" required>
-
-			<input type="submit" value="Register">
-		</form>
-	</div>
-</body>
-</html>
+	}
+?>

@@ -3,6 +3,8 @@
     session_start();
 ?>
 
+<link rel="stylesheet" href="templates/cart.css">
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -27,6 +29,8 @@
                     <?php
                         if(isset($_SESSION['username'])){
                             echo "<li><a href='index.php'><button>{$_SESSION['username']}</button></a></li>
+                                <li><a href='cart.php'><button>View cart</button></a></li>
+                                <li><a href='orders.php'><button>View orders</button></a></li>
                                 <form action='logout.php'>
                                     <li><button type='submit'>Logout</button></li>
                                 </form>";

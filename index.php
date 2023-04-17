@@ -100,6 +100,8 @@
 
 <div class="overlay" id="overlay"></div>
 
+<?php include('templates/footer.php') ?>
+
 <script src="js/scripts.js"></script>
 
 </html>

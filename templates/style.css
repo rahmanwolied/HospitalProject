@@ -165,6 +165,7 @@ nav ul li button{
 
 .products-section{
     padding: 44px;
+    background-color: white;
 }
 
 .products-section h1{
@@ -362,3 +363,53 @@ nav ul li button{
     height: 100%;
     padding: 20px;
 }
+
+/* footer */
+
+footer {
+    background: var(--primary-blue);
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .footer-content h3 {
+    margin-bottom: 20px;
+  }
+  .footer-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+  }
+
+  .footer-content p {
+    margin-left: 120px;
+  }
+
+  .footer-content ul li a {
+    color: #fff;
+    margin-right: 10px;
+    text-decoration: none;
+  }
+  .footer-bottom {
+    padding-top: 20px;
+    border-top: 1px solid #fff;
+    display: flex;
+    justify-content: center;
+  }
+  .footer-bottom p {
+    font-size: 14px;
+    margin: 0;
+  }
+
+  .footer-bottom a {
+    color: #fff;
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+  }

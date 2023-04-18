@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<link rel="stylesheet" href="templates/register.css" />
+		<script src="js/jquery.js"></script>
+		<script src="js/admin_login.js"></script>
+
+		<title>Admin Login</title>
+	</head>
+
+	<style>
+		body {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.form {
+			margin-top: 10%;
+		}
+	</style>
+
+	<body>
+		<div class="form">
+			<h2>Admin Login</h2>
+			<form action="admin_login.php" method="post">
+				<div id="error"></div>
+				<label for="name">Username:</label>
+				<input type="text" id="username" name="username" required />
+
+				<label for="password">Password:</label>
+				<input type="password" id="password" name="password" required />
+
+				<input type="submit" id="login" value="Login" />
+			</form>
+		</div>
+	</body>
+</html>

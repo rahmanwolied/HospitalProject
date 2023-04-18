@@ -11,7 +11,7 @@
 
     <div class="footer-bottom">
         <p>Copyright &copy; 2021 PharmAir
-        <a href="admin.html">Admin</a></p>
+        <a href="admin_login.html">Admin</a></p>
     </div>
 
 </footer>

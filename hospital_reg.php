@@ -14,22 +14,22 @@
 			<div id="error"></div>
 
             <label for="name">Name:</label>
-            <input type="text" id="name" name="name" value="test" required>
+            <input type="text" id="name" name="name" required>
 
 			<label for="username">Username:</label>
-			<input type="text" id="username" name="username" value='test' required>
+			<input type="text" id="username" name="username" required>
 
 			<label for="email">Email:</label>
-			<input type="email" id="email" name="email" value="test@test.com" required>
+			<input type="email" id="email" name="email" required>
 			
 			<label for="password">Password:</label>
-			<input type="password" id="password" name="password" value="1234" required>
+			<input type="password" id="password" name="password" required>
 
 			<label for="password2">Confirm Password:</label>
-			<input type="password" id="password2" name="password2" value="1234" required>
+			<input type="password" id="password2" name="password2" required>
 			
 			<label for="phone">Phone:</label>
-			<input type="tel" id="phone" name="phone" value="1234" required>
+			<input type="tel" id="phone" name="phone" required>
 
 			<label for="numBranches">How many branches do you have?</label>
 			<input type="number" id="numBranches" name="numBranches" value='0' required>

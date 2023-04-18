@@ -277,6 +277,16 @@ nav .profile-details i {
 	border-radius: 12px;
 	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
+
+.total-sales {
+	width: 100%;
+	background: #fff;
+	padding: 20px 30px;
+	margin: 0 20px;
+	border-radius: 12px;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
 .home-content .sales-boxes .sales-details {
 	display: flex;
 	align-items: center;
@@ -354,6 +364,63 @@ nav .profile-details i {
 	font-weight: 400;
 	color: #333;
 }
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	margin: 20px 0;
+	font-size: 16px;
+	color: #333;
+}
+
+th,
+td {
+	padding: 10px;
+	text-align: left;
+	vertical-align: middle;
+	border-bottom: 1px solid #ddd;
+}
+
+th {
+	background-color: #f2f2f2;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+tbody tr:nth-child(even) {
+	background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+	background-color: #ddd;
+}
+
+td:last-child {
+	text-align: center;
+	font-weight: bold;
+}
+
+td:last-child span {
+	padding: 6px 12px;
+	border-radius: 4px;
+}
+
+td:last-child span.shipped {
+	background-color: #4caf50;
+	color: #fff;
+}
+
+td:last-child span.pending {
+	background-color: #2196f3;
+	color: #fff;
+}
+
+td:last-child span.cancelled {
+	background-color: #f44336;
+	color: #fff;
+}
+
 /* Responsive Media Query */
 @media (max-width: 1240px) {
 	.sidebar {

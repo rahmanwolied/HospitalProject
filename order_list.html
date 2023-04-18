@@ -17,7 +17,7 @@
 			</div>
 			<ul class="nav-links">
 				<li>
-					<a href="#" class="active">
+					<a href="admin.html">
 						<i class="bx bx-grid-alt"></i>
 						<span class="links_name">Dashboard</span>
 					</a>
@@ -29,7 +29,7 @@
 					</a>
 				</li>
 				<li>
-					<a href="order_list.html">
+					<a href="order_list.html" class="active">
 						<i class="bx bx-list-ul"></i>
 						<span class="links_name">Order list</span>
 					</a>
@@ -72,30 +72,8 @@
 				</div>
 			</nav>
 			<div class="home-content">
-				<div class="overview-boxes">
-					<div class="box">
-						<div class="right-side">
-							<div class="box-topic">Total Orders</div>
-							<div class="indicator">
-								<i class="bx bx-up-arrow-alt"></i>
-								<span id="total-orders"></span>
-							</div>
-						</div>
-						<i class="bx bx-cart-alt cart"></i>
-					</div>
-					<div class="box">
-						<div class="right-side">
-							<div class="box-topic">Total Customers</div>
-							<div class="indicator">
-								<i class="bx bx-up-arrow-alt"></i>
-								<span class="text">Up from yesterday</span>
-							</div>
-						</div>
-						<i class="bx bxs-cart-add cart two"></i>
-					</div>
-				</div>
 				<div class="sales-boxes">
-					<div class="recent-sales box">
+					<div class="total-sales box">
 						<div class="title">Recent Orders</div>
 						<div class="orders-details">
 							<table>
@@ -106,28 +84,10 @@
 										<th>Customer</th>
 										<th>Total</th>
 										<th>Status</th>
+										<th>Confirm</th>
 									</tr>
 								</thead>
 								<tbody id="recent-orders"></tbody>
-							</table>
-						</div>
-						<div class="button">
-							<button id="seeAllOrders">See All</button>
-						</div>
-					</div>
-					<div class="top-sales box">
-						<div class="title">Top Selling Product</div>
-						<div class="top-sales-details">
-							<table>
-								<thead>
-									<tr>
-										<th>Product</th>
-										<th>Price</th>
-										<th>Stock</th>
-										<th>Sales</th>
-									</tr>
-								</thead>
-								<tbody id="top-selling"></tbody>
 							</table>
 						</div>
 					</div>

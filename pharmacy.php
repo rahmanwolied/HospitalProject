@@ -1,5 +1,5 @@
 <?php 
-	include("../config/dbconnect.php");
+	include("config/dbconnect.php");
 
 	if(isset($_POST['username']) && isset($_POST['password'])){
 		$username = mysqli_real_escape_string($conn, $_POST['username']);

@@ -1,10 +1,10 @@
 <?php 
-	include("../config/dbconnect.php");
+	include("config/dbconnect.php");
 
 	if(isset($_POST['username']) && isset($_POST['password'])){
 		$username = mysqli_real_escape_string($conn, $_POST['username']);
 
-		$sql = "SELECT * FROM customers WHERE c_id = '$username'";
+		$sql = "SELECT * FROM customers WHERE C_ID = '$username'";
 		$result = mysqli_query($conn, $sql);
 
 		if(mysqli_num_rows($result) > 0){
@@ -31,7 +31,7 @@
 				}
 			}
 
-			$sql = "INSERT INTO customers (C_ID, password, name, email, phone, discount) VALUES ('$username', '$password', '$name', '$email', '$phone', 10)";
+			$sql = "INSERT INTO customers (C_ID, password, Name, Email, Phone, Discount) VALUES ('$username', '$password', '$name', '$email', '$phone', 10)";
 
 			if(mysqli_query($conn, $sql)){
 				echo 1;

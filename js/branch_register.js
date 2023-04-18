@@ -67,7 +67,7 @@ $(document).ready(function(){
 
         else{
             $.ajax({
-                url: '../registers/hospital.php',
+                url: 'hospital.php',
                 type: 'POST',
                 data: {
                     name: name,
@@ -85,7 +85,7 @@ $(document).ready(function(){
                 success: function(data){
                     console.log(data);
                     if(data == 1){
-                        window.location.href = '../index.php';
+                        window.location.href = 'index.php';
                         $('#error').hide();
                     }
                     else{

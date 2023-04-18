@@ -4,6 +4,7 @@
 		<title>Admin</title>
 		<meta charset="UTF-8" />
 		<link rel="stylesheet" href="templates/admin.css" />
+		<link rel="stylesheet" href="templates/inventory.css" />
 		<link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<script src="js/jquery.js"></script>
@@ -22,15 +23,14 @@
 						<span class="links_name">Dashboard</span>
 					</a>
 				</li>
-
 				<li>
-					<a href="order_list.html" class="active">
+					<a href="order_list.html">
 						<i class="bx bx-list-ul"></i>
 						<span class="links_name">Order list</span>
 					</a>
 				</li>
 				<li>
-					<a href="inventory.html">
+					<a href="inventory.html" class="active">
 						<i class="bx bx-coin-stack"></i>
 						<span class="links_name">Stock</span>
 					</a>
@@ -52,8 +52,8 @@
 		<section class="home-section">
 			<nav>
 				<div class="sidebar-button">
-					<i class="bx bx-list-ul sidebarBtn"></i>
-					<span class="dashboard">Orders</span>
+					<i class="bx bx-coin-stack"></i>
+					<span class="dashboard">Inventory Management</span>
 				</div>
 				<div class="search-box">
 					<input type="text" placeholder="Search..." />
@@ -63,22 +63,39 @@
 			<div class="home-content">
 				<div class="sales-boxes">
 					<div class="total-sales box">
-						<div class="title">Recent Orders</div>
+						<div class="title">Stock</div>
 						<div class="orders-details">
 							<table>
 								<thead>
 									<tr>
-										<th>Order #</th>
-										<th>Date</th>
-										<th>Customer</th>
-										<th>Total</th>
-										<th>Status</th>
-										<th>Confirm</th>
+										<th>Product #</th>
+										<th>Product Name</th>
+										<th>Price</th>
+										<th>Quantity</th>
+										<th>Action</th>
 									</tr>
 								</thead>
-								<tbody id="recent-orders"></tbody>
+								<tbody id="inventory"></tbody>
 							</table>
 						</div>
+					</div>
+				</div>
+
+				<div id="myModal" class="modal">
+					<div class="modal-content">
+						<span id="close" class="close">&times;</span>
+						<h2>Confirm Order</h2>
+						<form>
+							<label for="suppliers">Suppliers</label>
+							<select id="suppliers" name="suppliers"></select>
+							<br />
+							<label for="quantity">Quantity:</label>
+							<input type="number" id="quantity" name="quantity" min="1" value="1" />
+							<br />
+							<button type="submit" id="confirm-btn" class="confirm-btn">
+								Confirm Order
+							</button>
+						</form>
 					</div>
 				</div>
 			</div>

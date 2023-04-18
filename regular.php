@@ -1,9 +1,9 @@
 <?php include("../config/dbconnect.php")?>
 
 <html>
-<link rel="stylesheet" href="../templates/register.css">
-<script src="../js/jquery.js"></script>
-<script src="../js/register.js"></script>
+<link rel="stylesheet" href="templates/register.css">
+<script src="js/jquery.js"></script>
+<script src="js/register.js"></script>
 
 <head>
 	<title>Register Form</title>

@@ -23,37 +23,25 @@
 					</a>
 				</li>
 				<li>
-					<a href="#">
-						<i class="bx bx-box"></i>
-						<span class="links_name">Products</span>
-					</a>
-				</li>
-				<li>
 					<a href="order_list.html">
 						<i class="bx bx-list-ul"></i>
 						<span class="links_name">Order list</span>
 					</a>
 				</li>
 				<li>
-					<a href="#">
+					<a href="inventory.html">
 						<i class="bx bx-coin-stack"></i>
 						<span class="links_name">Stock</span>
 					</a>
 				</li>
 				<li>
-					<a href="#">
-						<i class="bx bx-book-alt"></i>
-						<span class="links_name">Total order</span>
-					</a>
-				</li>
-				<li>
-					<a href="#">
+					<a href="customers.html">
 						<i class="bx bx-user"></i>
 						<span class="links_name">Total Customer</span>
 					</a>
 				</li>
 				<li class="log_out">
-					<a href="#">
+					<a href="index.php">
 						<i class="bx bx-log-out"></i>
 						<span class="links_name">Log out</span>
 					</a>
@@ -63,7 +51,7 @@
 		<section class="home-section">
 			<nav>
 				<div class="sidebar-button">
-					<i class="bx bx-menu sidebarBtn"></i>
+					<i class="bx bx-grid-alt sidebarBtn"></i>
 					<span class="dashboard">Dashboard</span>
 				</div>
 				<div class="search-box">
@@ -88,7 +76,7 @@
 							<div class="box-topic">Total Customers</div>
 							<div class="indicator">
 								<i class="bx bx-up-arrow-alt"></i>
-								<span class="text">Up from yesterday</span>
+								<span id="total-customers"></span>
 							</div>
 						</div>
 						<i class="bx bxs-cart-add cart two"></i>
@@ -112,11 +100,11 @@
 							</table>
 						</div>
 						<div class="button">
-							<button id="seeAllOrders">See All</button>
+							<button class="btn-edit" id="seeAllOrders">See All</button>
 						</div>
 					</div>
 					<div class="top-sales box">
-						<div class="title">Top Selling Product</div>
+						<div class="title">Top Selling Products</div>
 						<div class="top-sales-details">
 							<table>
 								<thead>

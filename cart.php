@@ -71,7 +71,19 @@
             <td></td>
             <td></td>
             <td></td>
-            <td id="total"></td>
+            <td class="totals" id="subtotal"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="totals" id="discount" style="color:red"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="totals" id="total"></td>
         </tr>
     </tbody>
 

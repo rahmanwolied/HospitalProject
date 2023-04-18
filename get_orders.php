@@ -19,11 +19,22 @@
                                 <td>{$orders[$i]['c_id']}</td>
                                 <td>৳{$orders[$i]['amount']}</td>
                                 <td>{$orders[$i]['status']}</td>
-                                <td> <button data-o-id='{$orders[$i]['o_id']}'> Confirm Delivery </button> </td>
+                                <td> <button class='confirm-delivery btn-edit' data-id='{$orders[$i]['o_id']}'> Confirm Delivery </button> </td>
                             </tr>";
             }
         }
+        else{
+            for($i = 0; $i < $count; $i++){
+                $table1 .= "<tr>
+                                <td>{$orders[$i]['o_id']}</td>
+                                <td>{$orders[$i]['order_date']}</td>
+                                <td>{$orders[$i]['c_id']}</td>
+                                <td>৳{$orders[$i]['amount']}</td>
+                                <td>{$orders[$i]['status']}</td>
+                            </tr>";    
+        }
     }
+}
     else{
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }
@@ -53,11 +64,16 @@
                     </tr>";
     }
 
+    $sql = "SELECT count(*) AS count FROM customers";
+    $result = mysqli_query($conn, $sql);
+    $row = mysqli_fetch_assoc($result);
+    $customer_count = $row['count'];
 
     $data = array(
         'table1' => $table1,
         'count' => count($orders),
-        'table2' => $table2
+        'table2' => $table2,
+        'customer_count' => $customer_count
     );
 
 

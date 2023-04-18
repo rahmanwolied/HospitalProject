@@ -421,6 +421,111 @@ td:last-child span.cancelled {
 	color: #fff;
 }
 
+/* The Modal (background) */
+.modal {
+	position: fixed; /* Stay in place */
+	z-index: 9999; /* Sit on top */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+	transform: scale(0);
+	transition: 200ms ease-in-out;
+}
+.modal.active {
+	transform: scale(1);
+}
+
+/* Modal Content/Box */
+.modal-content {
+	background-color: #fefefe;
+	margin: 10% auto; /* 10% from the top and centered */
+	padding: 20px;
+	border: 1px solid #888;
+	width: 40%; /* Could be more or less, depending on screen size */
+}
+
+/* Close Button */
+.close {
+	color: #aaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+/* Dropdown Menu */
+form select {
+	margin-bottom: 10px;
+	width: 100%;
+	padding: 12px 20px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+/* Number Input Field */
+form input[type='number'] {
+	margin-bottom: 10px;
+	width: 100%;
+	padding: 12px 20px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+/* Confirm Button */
+.confirm-btn {
+	display: block;
+	margin: 0 auto;
+	padding: 10px 20px;
+	background-color: #4caf50;
+	color: white;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+/* modal end */
+
+.btn-edit,
+.btn-delete {
+	background-color: var(--light-grey);
+	color: #007bff;
+	border: none;
+	padding: 5px 10px;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 14px;
+}
+
+.btn-edit:hover,
+.btn-delete:hover {
+	transform: translate(0, -2px);
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+	color: #fff;
+}
+
+.btn-edit:hover {
+	background-color: #007bff;
+}
+.btn-delete:hover {
+	background-color: rgba(255, 0, 0, 0.8);
+}
+
+.btn-delete {
+	color: red;
+	margin-left: 5px;
+}
+
 /* Responsive Media Query */
 @media (max-width: 1240px) {
 	.sidebar {
